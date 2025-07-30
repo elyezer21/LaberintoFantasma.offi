@@ -52,14 +52,14 @@ public class PantallaInicio extends JFrame {
         titulo3.setAlignmentX(Component.CENTER_ALIGNMENT);
         datosPanel.add(titulo3);
 
-        datosPanel.add(Box.createVerticalStrut(30));
+        datosPanel.add(Box.createVerticalStrut(25));
 
         JLabel grupo = new JLabel("GRUPO: 1SF121");
         grupo.setFont(tituloFont);
         grupo.setAlignmentX(Component.CENTER_ALIGNMENT);
         datosPanel.add(grupo);
 
-        datosPanel.add(Box.createVerticalStrut(30));
+        datosPanel.add(Box.createVerticalStrut(25));
 
         JLabel integrantesLabel = new JLabel("INTEGRANTES:");
         integrantesLabel.setFont(tituloFont);
@@ -77,7 +77,7 @@ public class PantallaInicio extends JFrame {
             datosPanel.add(label);
         }
 
-        datosPanel.add(Box.createVerticalStrut(30));
+        datosPanel.add(Box.createVerticalStrut(25));
 
         JLabel profesorLabel = new JLabel("PROFESOR:");
         profesorLabel.setFont(tituloFont);
@@ -88,7 +88,7 @@ public class PantallaInicio extends JFrame {
         profesorNombre.setAlignmentX(Component.CENTER_ALIGNMENT);
         datosPanel.add(profesorNombre);
 
-        datosPanel.add(Box.createVerticalStrut(30));
+        datosPanel.add(Box.createVerticalStrut(25));
 
         JLabel fechaLabel = new JLabel("FECHA DE ENTREGA:");
         fechaLabel.setFont(tituloFont);
