@@ -26,7 +26,7 @@ public class PantallaTerror extends JFrame {
 
         setVisible(true);
 
-        // Se cierra después de 5 segundos
+        // Timer para cerrar imagen de terror
         new Timer(5000, e -> System.exit(0)).start();
     }
 
