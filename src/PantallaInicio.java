@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.net.URL;
 
 public class PantallaInicio extends JFrame {
 
@@ -102,7 +103,7 @@ public class PantallaInicio extends JFrame {
 
         JButton iniciar = new JButton("Iniciar Juego");
         iniciar.setFont(new Font("Arial", Font.BOLD, 20));
-        iniciar.addActionListener((ActionEvent e) -> {
+        iniciar.addActionListener(e -> {
             dispose();
             new Main();
         });
@@ -113,5 +114,13 @@ public class PantallaInicio extends JFrame {
         add(botonPanel, BorderLayout.SOUTH);
 
         setVisible(true);
+    }
+
+    private URL getResourceURL(String path) {
+        URL url = getClass().getResource(path);
+        if (url == null) {
+            throw new IllegalStateException("Recurso no encontrado: " + path);
+        }
+        return url;
     }
 }

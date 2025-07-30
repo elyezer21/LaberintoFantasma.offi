@@ -13,7 +13,6 @@ public class Main extends JFrame {
         pack();
         setLocationRelativeTo(null);
         setVisible(true);
-
         juego.requestFocusInWindow();
     }
 

@@ -11,7 +11,7 @@ public class PantallaTerror extends JFrame {
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        URL imgUrl = getClass().getResource("terror.jpg");
+        URL imgUrl = getClass().getResource("/terror.jpg");
         if (imgUrl == null) {
             System.err.println("No se encontró la imagen.");
             return;
@@ -22,7 +22,7 @@ public class PantallaTerror extends JFrame {
         fondo.setVerticalAlignment(SwingConstants.CENTER);
         add(fondo);
 
-        reproducirSonido("terror.wav");
+        reproducirSonido();
 
         setVisible(true);
 
@@ -30,13 +30,20 @@ public class PantallaTerror extends JFrame {
         new Timer(5000, e -> System.exit(0)).start();
     }
 
-    private void reproducirSonido(String nombreArchivo) {
-        try (AudioInputStream audio = AudioSystem.getAudioInputStream(getClass().getResource(nombreArchivo))) {
+    private URL getResourceURL(String path) {
+        URL url = getClass().getResource(path);
+        if (url == null) {
+            throw new IllegalStateException("Recurso no encontrado: " + path);
+        }
+        return url;
+    }
+    private void reproducirSonido() {
+        try (AudioInputStream audio = AudioSystem.getAudioInputStream(getClass().getResource("/terror.wav"))) {
             Clip clip = AudioSystem.getClip();
             clip.open(audio);
             clip.start();
         } catch (Exception ex) {
-            ex.printStackTrace();
+            System.err.println("Error al reproducir sonido: " + ex.getMessage());
         }
     }
 }
